@@ -86,10 +86,18 @@ $  lvresize -l +100%FREE /dev/mapper/rl_k1-root
   Logical volume rl_k1/root successfully resized.
 ```
 
-8.. Resize the XFS partition to make use of the new space
+8.1. (XFS) Resize the partition to make use of the new space
 
 ```
 $ xfs_growfs /dev/mapper/rl_k1-root
+...
+data blocks changed from 4455424 to 12319744
+```
+
+8.2. (ext4) Resize the partition to make use of the new space
+
+```
+$ resize2fs /dev/mapper/rl_k1-root
 ...
 data blocks changed from 4455424 to 12319744
 ```
