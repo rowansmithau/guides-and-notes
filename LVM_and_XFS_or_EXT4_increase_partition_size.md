@@ -1,4 +1,4 @@
-### Covers the process of resizing the partition on a CentOS/RHEL/Rocky/? based distro using LVM and XFS after you have increased the physical disk size.
+### Covers the process of resizing the partition on a CentOS/RHEL/Rocky/? based distro using LVM and XFS or EXT4 after you have increased the physical disk size.
 
 1. Confirm that Linux sees increased disk size
 ```
@@ -86,7 +86,7 @@ $  lvresize -l +100%FREE /dev/mapper/rl_k1-root
   Logical volume rl_k1/root successfully resized.
 ```
 
-8. Resize the XFS partition to make use of the new space
+8.. Resize the XFS partition to make use of the new space
 
 ```
 $ xfs_growfs /dev/mapper/rl_k1-root
